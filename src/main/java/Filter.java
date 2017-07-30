@@ -25,20 +25,19 @@ public class Filter {
 //    return result;
 
 
+
+
   public static List<Apple> fiterApples(List<Apple> inventory, Predicate<Apple> p) {
 
     List<Apple> result = new ArrayList<>();
 
     for (Apple apple : inventory) {
       if (p.test(apple)) {
-        System.out.println(apple.getColor());
-
         result.add(apple);
       }
     }
 
-
-
+    System.out.println(result.get(0).getColor());
     return result;
   }
 
