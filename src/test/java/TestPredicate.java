@@ -1,5 +1,6 @@
 import Start.Apple;
 import Start.Filter;
+import Stream.AboutStream;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -39,7 +40,13 @@ public class TestPredicate {
     Filter.fiterApples(inventory, apple ->
       apple.getColor().equals("red")
     );
-
-
   }
+
+  @Test
+  public void testMenu() {
+    AboutStream aboutStream = new AboutStream();
+    aboutStream.test();
+  }
+
+
 }
