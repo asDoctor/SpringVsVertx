@@ -1,3 +1,5 @@
+package Start;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -16,9 +18,9 @@ public class Filter {
     return result;
   }
 
-//  public static List<Apple> filterGreenApple(List<Apple> inventory) {
-//    List<Apple> result = new ArrayList<Apple>();
-//    for (Apple apple : inventory) {
+//  public static List<Start.Apple> filterGreenApple(List<Start.Apple> inventory) {
+//    List<Start.Apple> result = new ArrayList<Start.Apple>();
+//    for (Start.Apple apple : inventory) {
 //      if (apple.getWeight() >= 150)
 //        result.add(apple);
 //    }

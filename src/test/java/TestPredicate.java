@@ -1,3 +1,5 @@
+import Start.Apple;
+import Start.Filter;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,11 +13,11 @@ public class TestPredicate {
   @Test
   public void test1() {
     List<Apple> inventory = new ArrayList<Apple>();
-//    Apple apple1 = new Apple();
+//    Start.Apple apple1 = new Start.Apple();
 //    apple1.setColor("green");
 //    apple1.setWeight(140);
 //
-//    Apple apple2 = new Apple();
+//    Start.Apple apple2 = new Start.Apple();
 //    apple2.setColor("red");
 //    apple2.setWeight(30);
 
@@ -23,13 +25,13 @@ public class TestPredicate {
 //    inventory.add(apple1);
 //    inventory.add(apple2);
 //
-////    Filter.fiterApples(list, Apple::isGreenApple);
+////    Start.Filter.fiterApples(list, Start.Apple::isGreenApple);
 
-//    Filter.fiterApples(list, Apple::isHeavyApple);
+//    Start.Filter.fiterApples(list, Start.Apple::isHeavyApple);
 
-//    Filter.fiterApples(inventory, new Predicate<Apple>() {
+//    Start.Filter.fiterApples(inventory, new Predicate<Start.Apple>() {
 //      @Override
-//      public boolean test(Apple apple) {
+//      public boolean test(Start.Apple apple) {
 //        return apple.getColor().equals("red");
 //      }
 //    });

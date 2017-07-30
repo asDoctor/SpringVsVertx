@@ -1,3 +1,5 @@
+package Start;
+
 /**
  * Created by songqian on 17/7/29.
  */
@@ -30,11 +32,11 @@ public class Apple {
     this.color = color;
   }
 
-//  public static boolean isGreenApple(Apple apple) {
+//  public static boolean isGreenApple(Start.Apple apple) {
 //    return apple.getColor().equals("green");
 //  }
 //
-//  public static boolean isHeavyApple(Apple apple) {
+//  public static boolean isHeavyApple(Start.Apple apple) {
 //    return apple.getWeight() > 100;
 //  }
 
