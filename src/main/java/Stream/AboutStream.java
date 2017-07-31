@@ -40,12 +40,54 @@ public class AboutStream {
     Long count = menu.stream().filter(dish -> dish.getCalories() > 300)
       .map(Dish::getName).count();
 
-    System.out.println(dishType);
+    if(menu.stream().anyMatch(Dish::isVegetarian)){
+      System.out.println("vegetarian");
+    }
+
+    boolean isHealth = menu.stream().allMatch(dish -> dish.getCalories()>30);
+    System.out.println(isHealth);
+
+    boolean isHealth1 = menu.stream().noneMatch(dish -> dish.getCalories()>1000);
+    System.out.println(isHealth1);
 
 
-    System.out.println(threeHighCaloricDishNames);
 
-    System.out.println(count);
+
+
+    List<Integer> list = menu.stream().map(Dish::getName).map(String::length).collect(toList());
+
+    List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7);
+
+    List<Integer> squares = numbers.stream().map(i -> i * i).collect(toList());
+
+//    System.out.println(squares);
+//
+//    System.out.println(list);
+//
+//    System.out.println(dishType);
+//
+//    System.out.println(threeHighCaloricDishNames);
+//
+//    System.out.println(count);
+//
+//    List<Integer> num1 = Arrays.asList(1, 2, 3);
+//    List<Integer> num2 = Arrays.asList(3, 4);
+//
+//
+//    List<int[]> ints = num1.stream().flatMap(i -> num2.stream().map(j -> new int[]{i, j})).collect(toList());
+//
+//    List<int[]> ints2 = num1.stream().flatMap(i -> num2.stream().filter(j -> (i + j) % 3 == 0).map(j -> new int[]{i, j})).collect(toList());
+//
+//    for (int[] ints1 : ints) {
+//      System.out.println(Arrays.toString(ints1));
+//    }
+//    System.out.println("@@@@@@@@@@@@@@@@@@");
+//    for (int[] ints1 : ints2) {
+//      System.out.println(Arrays.toString(ints1));
+//    }
+
+
+
 
 
   }
