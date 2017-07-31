@@ -2,6 +2,7 @@ package Stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 
@@ -28,8 +29,18 @@ public class AboutStream {
       .filter(dish -> dish.getCalories() > 300)
       .map(Dish::getName).limit(3).collect(toList());
 
+    List<Dish.Type> dishType = menu.stream().filter(new Predicate<Dish>() {
+      @Override
+      public boolean test(Dish dish) {
+        return dish.getCalories() > 600;
+      }
+    }).map(Dish::getType).collect(toList());
+
+
     Long count = menu.stream().filter(dish -> dish.getCalories() > 300)
       .map(Dish::getName).count();
+
+    System.out.println(dishType);
 
 
     System.out.println(threeHighCaloricDishNames);
