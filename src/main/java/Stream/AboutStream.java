@@ -2,6 +2,7 @@ package Stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -40,18 +41,24 @@ public class AboutStream {
     Long count = menu.stream().filter(dish -> dish.getCalories() > 300)
       .map(Dish::getName).count();
 
-    if(menu.stream().anyMatch(Dish::isVegetarian)){
+    if (menu.stream().anyMatch(Dish::isVegetarian)) {
       System.out.println("vegetarian");
     }
 
-    boolean isHealth = menu.stream().allMatch(dish -> dish.getCalories()>30);
-    System.out.println(isHealth);
+//    boolean isHealth = menu.stream().allMatch(dish -> dish.getCalories()>30);
+//    System.out.println(isHealth);
+//
+//    boolean isHealth1 = menu.stream().noneMatch(dish -> dish.getCalories()>1000);
+//    System.out.println(isHealth1);
 
-    boolean isHealth1 = menu.stream().noneMatch(dish -> dish.getCalories()>1000);
-    System.out.println(isHealth1);
+
+    Optional<Dish> dish = menu.stream().filter(Dish::isVegetarian).findAny();
 
 
+    menu.stream().filter(Dish::isVegetarian).findAny().ifPresent(dish1 -> System.out.println(dish1.getName()));
 
+
+//    System.out.println(dish.isPresent());
 
 
     List<Integer> list = menu.stream().map(Dish::getName).map(String::length).collect(toList());
@@ -59,6 +66,16 @@ public class AboutStream {
     List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7);
 
     List<Integer> squares = numbers.stream().map(i -> i * i).collect(toList());
+
+
+    List<Integer> list1 = Arrays.asList(1, 2, 3, 4);
+    int sum = list1.stream().reduce(100, (a, b) -> a * b);
+    System.out.println(sum);
+
+    Optional<Integer> max = list1.stream().reduce(Integer::max);
+
+    System.out.println(max.get());
+
 
 //    System.out.println(squares);
 //
@@ -85,9 +102,6 @@ public class AboutStream {
 //    for (int[] ints1 : ints2) {
 //      System.out.println(Arrays.toString(ints1));
 //    }
-
-
-
 
 
   }
